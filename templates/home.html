@@ -1,9 +1,10 @@
 {% extends "_base.html" %}
-
+{% load static %}
 {% block title %}Home{% endblock title %} 
 
 {% block content %}
-    <h1>Home mi rey</h1>
+    <h1>Bello Lacava</h1>
+    <img src="{% static 'images/Lacava.jpg' %}" alt="QUE BELLO" class="bookcover">
     {% if user.is_authenticated %}
         <p>Perdio la vinotinto {{ user.email }}</p>
         <form action="{% url 'logout' %}" method="post">
