@@ -4,4 +4,10 @@
 
 {% block content %}
     <h1>Home mi rey</h1>
+    {% if user.is_authenticated %}
+        <p>Perdio la vinotinto {{ user.email }}</p>
+    {% else %}
+        <p>Registrate!!! >:(</p>
+        <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
 {% endblock content %}
