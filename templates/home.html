@@ -6,6 +6,10 @@
     <h1>Home mi rey</h1>
     {% if user.is_authenticated %}
         <p>Perdio la vinotinto {{ user.email }}</p>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Log Out</button>
+        </form>
     {% else %}
         <p>Registrate!!! >:(</p>
         <a href="{% url 'login' %}">Log In</a>
